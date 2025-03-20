@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-light dark:bg-dark py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl font-bold text-center text-dark dark:text-light mb-12">我的项目</h1>
+      <h1 class="text-4xl font-bold text-center text-dark dark:text-light mb-20">我的项目</h1>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- 项目卡片 1 -->

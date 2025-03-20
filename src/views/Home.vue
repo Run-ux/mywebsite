@@ -33,7 +33,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-light to-gray-100 dark:from-dark dark:to-gray-900 overflow-hidden">
+  <div class="min-h-screen overflow-hidden relative">
+    <!-- 美化的背景渐变效果 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-light dark:from-gray-900 dark:via-blue-950 dark:to-dark z-0 animate-gradient-slow"></div>
+    <!-- 装饰性背景元素 -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-l from-green-300/10 to-blue-300/10 rounded-full blur-3xl animate-float-reverse"></div>
+    <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-yellow-200/10 dark:bg-yellow-400/5 rounded-full blur-2xl animate-pulse-slow"></div>
+    
+    <!-- 内容容器，相对定位确保内容在背景之上 -->
+    <div class="relative z-10">
     <!-- Hero Section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
       <!-- 背景装饰元素 -->
@@ -61,8 +70,10 @@ onMounted(() => {
         <div class="md:w-1/2 slide-in-right" style="animation-delay: 0.6s;">
           <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center floating">
             <div class="absolute w-60 h-60 md:w-72 md:h-72 bg-light dark:bg-dark rounded-full flex items-center justify-center">
-              <!-- 这里可以放置头像图片 -->
-              <div class="text-6xl bounce">👨‍💻</div>
+              <!-- 使用codeboy.png作为头像图片 -->
+              <div class="bounce" style="margin-top: 50px;">
+                <img src="@/assets/codeboy.png" alt="Codeboy" class="w-80 h-80 object-contain" />
+              </div>
             </div>
           </div>
         </div>
@@ -126,5 +137,6 @@ onMounted(() => {
         </div>
       </div>
     </section>
+    </div>
   </div>
 </template>

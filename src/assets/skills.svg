@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+  <!-- Frontend -->
+  <g transform="translate(0, 0)">
+    <rect x="5" y="5" width="90" height="90" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+    <text x="50" y="40" font-family="Arial" font-size="12" text-anchor="middle" fill="#1E40AF">Frontend</text>
+    <text x="50" y="70" font-family="Arial" font-weight="bold" font-size="16" text-anchor="middle" fill="#3B82F6">90%</text>
+  </g>
+  
+  <!-- Backend -->
+  <g transform="translate(100, 0)">
+    <rect x="5" y="5" width="90" height="90" rx="10" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+    <text x="50" y="40" font-family="Arial" font-size="12" text-anchor="middle" fill="#065F46">Backend</text>
+    <text x="50" y="70" font-family="Arial" font-weight="bold" font-size="16" text-anchor="middle" fill="#10B981">85%</text>
+  </g>
+  
+  <!-- Database -->
+  <g transform="translate(200, 0)">
+    <rect x="5" y="5" width="90" height="90" rx="10" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+    <text x="50" y="40" font-family="Arial" font-size="12" text-anchor="middle" fill="#991B1B">Database</text>
+    <text x="50" y="70" font-family="Arial" font-weight="bold" font-size="16" text-anchor="middle" fill="#EF4444">80%</text>
+  </g>
+  
+  <!-- DevOps -->
+  <g transform="translate(300, 0)">
+    <rect x="5" y="5" width="90" height="90" rx="10" fill="#FDF2F8" stroke="#EC4899" stroke-width="2"/>
+    <text x="50" y="40" font-family="Arial" font-size="12" text-anchor="middle" fill="#9D174D">DevOps</text>
+    <text x="50" y="70" font-family="Arial" font-weight="bold" font-size="16" text-anchor="middle" fill="#EC4899">75%</text>
+  </g>
+</svg>

@@ -20,7 +20,7 @@ const closeMenu = () => {
       <div class="flex justify-between h-16">
         <div class="flex items-center">
           <router-link to="/" class="flex-shrink-0 flex items-center">
-            <span class="text-2xl font-bold text-primary">程序员小明</span>
+            <span class="text-2xl font-bold text-primary">0xFFFFAAA1</span>
           </router-link>
         </div>
         

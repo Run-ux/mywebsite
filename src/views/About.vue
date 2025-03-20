@@ -1,24 +1,88 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import avatarImg from '../assets/avatar.svg';
+import skillsImg from '../assets/skills.svg';
+
+const isVisible = ref(false);
+
+onMounted(() => {
+  // 页面加载后触发动画
+  setTimeout(() => {
+    isVisible.value = true;
+  }, 100);
+});
+</script>
+
 <template>
   <div class="min-h-screen bg-light dark:bg-dark py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold text-center text-dark dark:text-light mb-12">关于我</h1>
+      <h1 class="text-4xl font-bold text-center text-dark dark:text-light mb-12 fade-in">关于我</h1>
       
-      <!-- 个人简介 -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 mb-10">
-        <h2 class="text-2xl font-semibold text-dark dark:text-light mb-6">个人简介</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          你好！我是一名充满激情的全栈开发工程师，拥有5年的专业开发经验。我热爱创造能够解决实际问题的应用程序，并且不断学习新技术来提升自己的技能。
-        </p>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          我的技术栈涵盖前端和后端开发，擅长使用现代JavaScript框架构建响应式和用户友好的web应用。我注重代码质量和性能优化，同时也具备良好的团队协作能力。
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          在工作之外，我喜欢参与开源项目，撰写技术博客分享我的知识和经验，并且热衷于参加技术社区活动。
-        </p>
+      <!-- 个人简介和头像 -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 mb-10 hover-shadow" :class="{ 'slide-up': isVisible }">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="md:w-1/3 flex justify-center">
+            <img :src="avatarImg" alt="个人头像" class="w-48 h-48 rounded-full shadow-lg hover-scale floating" />
+          </div>
+          <div class="md:w-2/3">
+            <h2 class="text-2xl font-semibold text-dark dark:text-light mb-6">个人简介</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              你好！我是一名充满激情的全栈开发工程师，拥有5年的专业开发经验。我热爱创造能够解决实际问题的应用程序，并且不断学习新技术来提升自己的技能。
+            </p>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              我的技术栈涵盖前端和后端开发，擅长使用现代JavaScript框架构建响应式和用户友好的web应用。我注重代码质量和性能优化，同时也具备良好的团队协作能力。
+            </p>
+            <p class="text-gray-700 dark:text-gray-300">
+              在工作之外，我喜欢参与开源项目，撰写技术博客分享我的知识和经验，并且热衷于参加技术社区活动。
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 技能展示 -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 mb-10 hover-shadow" :class="{ 'slide-in-right': isVisible }">
+        <h2 class="text-2xl font-semibold text-dark dark:text-light mb-6">专业技能</h2>
+        <div class="flex justify-center mb-8">
+          <img :src="skillsImg" alt="技能图表" class="w-full max-w-2xl pulse" />
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="skill-item">
+            <h3 class="text-xl font-medium text-primary mb-2">前端技术</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+              <div class="bg-blue-600 h-2.5 rounded-full skill-progress" style="width: 90%"></div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Vue.js, React, JavaScript, HTML/CSS, Tailwind</p>
+          </div>
+          
+          <div class="skill-item">
+            <h3 class="text-xl font-medium text-primary mb-2">后端技术</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+              <div class="bg-green-600 h-2.5 rounded-full skill-progress" style="width: 85%"></div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Node.js, Express, Python, Django, RESTful API</p>
+          </div>
+          
+          <div class="skill-item">
+            <h3 class="text-xl font-medium text-primary mb-2">数据库</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+              <div class="bg-red-600 h-2.5 rounded-full skill-progress" style="width: 80%"></div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">MongoDB, MySQL, PostgreSQL, Redis</p>
+          </div>
+          
+          <div class="skill-item">
+            <h3 class="text-xl font-medium text-primary mb-2">DevOps</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+              <div class="bg-pink-600 h-2.5 rounded-full skill-progress" style="width: 75%"></div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Docker, CI/CD, AWS, Git, Linux</p>
+          </div>
+        </div>
       </div>
       
       <!-- 教育背景 -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 mb-10">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 mb-10 hover-shadow" :class="{ 'slide-in-left': isVisible }">
         <h2 class="text-2xl font-semibold text-dark dark:text-light mb-6">教育背景</h2>
         <div class="mb-6">
           <h3 class="text-xl font-medium text-primary">计算机科学与技术 学士学位</h3>
@@ -38,7 +102,7 @@
       </div>
       
       <!-- 工作经历 -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 hover-shadow" :class="{ 'slide-up': isVisible }">
         <h2 class="text-2xl font-semibold text-dark dark:text-light mb-6">工作经历</h2>
         <div class="mb-8">
           <h3 class="text-xl font-medium text-primary">高级全栈开发工程师</h3>
@@ -64,3 +128,40 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.skill-progress {
+  animation: progress 1.5s ease-out forwards;
+  width: 0;
+}
+
+@keyframes progress {
+  from { width: 0; }
+  to { width: var(--width); }
+}
+
+.skill-item {
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 为技能进度条设置初始宽度 */
+.skill-item:nth-child(1) .skill-progress {
+  --width: 90%;
+}
+
+.skill-item:nth-child(2) .skill-progress {
+  --width: 85%;
+}
+
+.skill-item:nth-child(3) .skill-progress {
+  --width: 80%;
+}
+
+.skill-item:nth-child(4) .skill-progress {
+  --width: 75%;
+}
+</style>
