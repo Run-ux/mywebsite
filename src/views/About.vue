@@ -14,7 +14,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-light dark:bg-dark py-16 px-4 sm:px-6 lg:px-8">
+  <div class="min-h-screen overflow-hidden relative">
+    <!-- 美化的背景渐变效果 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-light dark:from-gray-900 dark:via-indigo-950 dark:to-dark z-0 animate-gradient-slow"></div>
+    <!-- 装饰性背景元素 -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-300/20 to-indigo-300/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-l from-indigo-300/10 to-blue-300/10 rounded-full blur-3xl animate-float-reverse"></div>
+    <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-blue-200/10 dark:bg-blue-400/5 rounded-full blur-2xl animate-pulse-slow"></div>
+    
+    <!-- 内容容器，相对定位确保内容在背景之上 -->
+    <div class="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-center text-dark dark:text-light mb-12 fade-in">关于我</h1>
       
@@ -125,6 +134,7 @@ onMounted(() => {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>

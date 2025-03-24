@@ -1,5 +1,14 @@
 <template>
-  <div class="min-h-screen bg-light dark:bg-dark py-16 px-4 sm:px-6 lg:px-8">
+  <div class="min-h-screen overflow-hidden relative">
+    <!-- 美化的背景渐变效果 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-green-50 via-teal-100 to-light dark:from-gray-900 dark:via-teal-950 dark:to-dark z-0 animate-gradient-slow"></div>
+    <!-- 装饰性背景元素 -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-r from-green-300/20 to-blue-300/20 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-l from-blue-300/10 to-green-300/10 rounded-full blur-3xl animate-float-reverse"></div>
+    <div class="absolute top-1/3 left-1/4 w-40 h-40 bg-teal-200/10 dark:bg-teal-400/5 rounded-full blur-2xl animate-pulse-slow"></div>
+    
+    <!-- 内容容器，相对定位确保内容在背景之上 -->
+    <div class="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <h1 class="text-4xl font-bold text-center text-dark dark:text-light mb-12">技术博客</h1>
       
@@ -79,6 +88,7 @@
           <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-r-md hover:bg-gray-50 dark:hover:bg-gray-700">下一页</a>
         </nav>
       </div>
+    </div>
     </div>
   </div>
 </template>
