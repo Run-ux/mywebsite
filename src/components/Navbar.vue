@@ -2,6 +2,8 @@
 import { ref, onMounted, computed, nextTick, watch } from 'vue';
 import './NavbarStyles.css';
 import { useRouter, useRoute } from 'vue-router';
+import { useThemeStore } from '../stores/theme';
+import { SunIcon, MoonIcon } from '@heroicons/vue/24/outline';
 
 const router = useRouter();
 const route = useRoute();
@@ -9,6 +11,15 @@ const isMenuOpen = ref(false);
 const activeIndicator = ref(null);
 const navItems = ref(null);
 const hoveredItem = ref(null);
+
+// 主题切换相关
+const themeStore = useThemeStore();
+const isDark = computed(() => themeStore.isDark);
+
+// 切换主题
+const toggleTheme = () => {
+  themeStore.toggleTheme();
+};
 
 // 计算当前活动路由
 const currentPath = computed(() => route.path);
@@ -137,6 +148,16 @@ watch(() => route.path, () => {
           >
             <span class="relative z-10 transition-transform duration-300 ease-in-out hover:translate-y-[-2px]">联系</span>
           </router-link>
+          
+          <!-- 主题切换按钮 -->
+          <button 
+            @click="toggleTheme" 
+            class="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-110 hover:rotate-12 focus:outline-none"
+            :aria-label="isDark ? '切换到亮色模式' : '切换到深色模式'"
+          >
+            <SunIcon v-if="isDark" class="h-5 w-5" />
+            <MoonIcon v-else class="h-5 w-5" />
+          </button>
         </div>
         
         <!-- 移动端菜单按钮 -->
@@ -202,6 +223,19 @@ watch(() => route.path, () => {
           >
             联系
           </router-link>
+          
+          <!-- 移动端主题切换按钮 -->
+          <div class="flex items-center justify-between px-3 py-2 mt-2 border-t border-gray-200 dark:border-gray-700">
+            <span class="text-gray-700 dark:text-gray-300 text-sm font-medium">{{ isDark ? '深色模式' : '亮色模式' }}</span>
+            <button 
+              @click="toggleTheme" 
+              class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-110 focus:outline-none"
+              :aria-label="isDark ? '切换到亮色模式' : '切换到深色模式'"
+            >
+              <SunIcon v-if="isDark" class="h-5 w-5" />
+              <MoonIcon v-else class="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </div>
     </transition>
