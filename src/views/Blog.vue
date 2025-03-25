@@ -82,9 +82,9 @@
       <div class="flex justify-center mt-12">
         <nav class="inline-flex rounded-md shadow-sm">
           <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-l-md hover:bg-gray-50 dark:hover:bg-gray-700">上一页</a>
-          <a href="#" class="px-4 py-2 bg-primary text-white border border-primary">1</a>
-          <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">2</a>
-          <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">3</a>
+          <a href="#" class="px-4 py-2 bg-emerald-700 text-white border border-emerald-700">1</a>
+          <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-emerald-700 hover:text-white hover:border-emerald-700 dark:hover:bg-emerald-700">2</a>
+          <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-emerald-700 hover:text-white hover:border-emerald-700 dark:hover:bg-emerald-700">3</a>
           <a href="#" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-r-md hover:bg-gray-50 dark:hover:bg-gray-700">下一页</a>
         </nav>
       </div>
